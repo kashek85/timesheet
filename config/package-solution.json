@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "btg-timesheet-client-side-solution",
+    "id": "32b977b1-eb18-4144-9137-9b6d296e6c80",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/btg-timesheet.sppkg"
+  }
+}
