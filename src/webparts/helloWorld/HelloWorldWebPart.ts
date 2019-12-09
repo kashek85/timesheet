@@ -1,3 +1,4 @@
+import { SPComponentLoader } from '@microsoft/sp-loader';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
@@ -16,6 +17,17 @@ export interface IHelloWorldWebPartProps {
 }
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
+
+  public constructor(){
+    super();
+    SPComponentLoader.loadCss('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    SPComponentLoader.loadCss('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+
+    SPComponentLoader.loadScript('https://code.jquery.com/jquery-3.4.1.min.js', { globalExportsName: 'jQuery' }).then((jQuery: any): void => {
+      SPComponentLoader.loadScript('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js',  { globalExportsName: 'jQuery' }).then((): void => {        
+      });
+    });
+  }
 
   public render(): void {
     const element: React.ReactElement<IHelloWorldProps > = React.createElement(
